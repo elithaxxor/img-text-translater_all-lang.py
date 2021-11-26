@@ -3,8 +3,6 @@ import pytesseract, os, platform, subprocess, time, easyocr, traceback, cv2
 from googletrans import Translator; from subprocess import call; from PIL import Image; from IPython.display import display, Image
 from textblob import TextBlob; import inspect
 
-
-
 class Colors:
     reset = "\033[0m"
     fgBlack = "\033[30m"; fgBrightBlack = "\033[30;1m"; bgBlack = "\033[40m"; bgBrightBlack = "\033[40;1m"    # Black
@@ -21,24 +19,16 @@ def period_wait():
     # multi = [2,2,2,2,2,2,2,2,2,2]
     period_len = len(period)
     for z, x in enumerate(period):
-        print(x)
-        time.sleep(.2)
-        if z <= period_len:
-            z += 1
-            print(f"{yellow}{x * z}{reset}")
-            continue
-        elif z == period_len:
-            break
+        print(x); time.sleep(.2)
+        if z <= period_len: z += 1; print(f"{yellow}{x * z}{reset}"); continue
+        elif z == period_len: break
 
 
 def clear(): os_name = platform.system(); _ = call('clear' if os_name == 'Linux' or 'Windows' or 'Darwin' else 'cls')
-
-
 def display_header():
     print('X' * 75)
     color_red = Colors()
-    global red0; red0 = color_red.fgRed
-    global reset0; reset0 = color_red.reset
+    global red0; red0 = color_red.fgRed; global reset0; reset0 = color_red.reset
     x = 'x'
     print(f"{'X' * 125:^70}"); print(f"{'X' * 125:^70}")
     pretty = f'\t\t\t\t {red0}xxx [TEXT-TEXT] // [IMG-TXT Translator] {reset0}'
@@ -101,8 +91,7 @@ class TextTranslate():
 # print(f"[+] Detected Language [GOOGLE] \n\t\t --->{self.translator.detect(self.inQuestion, dest='en')}") # print(f'[+] Translated Text [BLOBBER] {self.blobber.translate(to="en")}].. ')
     def translate_to_spanish(self):
         try:
-            print('\n', 'X' * 50)
-            print(f'[+] Translating :: [SPANISH] \n [{self.inQuestion}]{reset}')
+            print('\n', 'X' * 50); print(f'[+] Translating :: [SPANISH] \n [{self.inQuestion}]{reset}')
             print(
                 f'{bblue}[+]-[SPANISH]-[+] Translated Text [+]-[BLOBBER]-[+]\n\t\t {reset}{yellow} ---> {self.blobber.translate(to="es")}] <--{reset} '); print('X' * 50, '\n')
         except AttributeError: print(f'{red} ill fix you later--google{reset}'); pass
