@@ -8,6 +8,8 @@ from textblob import TextBlob
 import inspect
 
 
+# https://github.com/elithaxxor/img-text-translater_all-lang.py/blob/main_pi/img_txt_translate_ii.py 
+
 class Colors:
     reset = "\033[0m"
     fgBlack = "\033[30m"
