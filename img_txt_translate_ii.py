@@ -80,7 +80,7 @@ def display_header():
     three = f'[USAGE] - [2] Trim AV, with Min/Max Values && duration '
     four = f'[USAGE] - [3] Compresses the AV, by rescaling resolution and resizing file'
     five = f'[USAGE] - [5] Play Videos.{reset}'
-    six = f'{red}[+]-[+] copyright material from Adel Al-Aali [+]-[+] {reset}'
+    six = f'{red}[+]-[+] copyleft material from Adel Al-Aali [+]-[+] All Wrongs Reserved. [+]-[+] {reset}'
     seven = f'[+] Future Addtion: Attach to OS.Listwalker and impliment Generator/text feed to auto convert large lists  [+]'
     print(f"{one:^70}")
     print(f"{two:^70}")
@@ -430,6 +430,7 @@ def translate_to_latin0(self):
 
 
 if __name__ == '__main__':
+    print(f'{red}\t\t[+]-[+] copyleft material from Adel Al-Aali [+]-[+] All Wrongs Reserved. [+]-[+] {reset}'
     img_parser = ImageTranslate()
 
 #
